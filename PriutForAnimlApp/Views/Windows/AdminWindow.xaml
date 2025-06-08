@@ -1,0 +1,153 @@
+﻿<Window x:Class="PriutForAnimlApp.Views.Windows.EmployeeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Employee" Height="400" Width="800" 
+        WindowStyle="None" AllowsTransparency="True" Background="Transparent"
+        ResizeMode="CanResizeWithGrip">
+
+    
+    <Window.Resources>
+        <Style x:Key="IconButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="Transparent" 
+                                BorderBrush="Transparent" 
+                                BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Opacity" Value="0.8"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Opacity" Value="0.6"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="IconWithTextButtonStyle" TargetType="Button" BasedOn="{StaticResource IconButtonStyle}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+
+        <Style x:Key="ButtonTextStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="0,5,0,0"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
+    <!-- Основной контейнер -->
+    <Grid>
+        <!-- Фоновое изображение -->
+        <Image Source="/Assets/Images/Icons/9b6a3e81ce30e682ffa2965cb596c45a.jpg" Stretch="UniformToFill"/>
+
+        <!-- Затемнение только для левой части -->
+        <Rectangle Fill="#80000000" Width="160" HorizontalAlignment="Left"/>
+
+        <!-- Панель управления окном -->
+        <Grid Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Кнопки управления окном -->
+            <StackPanel Grid.Column="1" Orientation="Horizontal" Background="#30000000" VerticalAlignment="Top" HorizontalAlignment="Right">
+                <Button x:Name="MinimizeButton" Width="40" Height="30" 
+                        Style="{StaticResource IconButtonStyle}"
+                        Click="MinimizeButton_Click" ToolTip="Minimize">
+                    <Image Source="/Assets/Images/Icons/icons8-знак-минус-96.png" Width="12" Height="12"/>
+                </Button>
+
+                <Button x:Name="MaximizeRestoreButton" Width="40" Height="30"
+                        Style="{StaticResource IconButtonStyle}"
+                        Click="MaximizeRestoreButton_Click" ToolTip="Maximize/Restore">
+                    <Image Source="/Assets/Images/Icons/icons8-восстановить-окно-96.png" Width="12" Height="12"/>
+                </Button>
+
+                <Button x:Name="CloseButton" Width="40" Height="30"
+                        Style="{StaticResource IconButtonStyle}"
+                        Click="CloseButton_Click" ToolTip="Close">
+                    <Image Source="/Assets/Images/Icons/icons8-крестик-78.png" Width="12" Height="12"/>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!-- Основное разделение на 2 части -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <!-- Левая часть (1/6) -->
+                <ColumnDefinition Width="4*"/>
+                <!-- Правая часть (5/6) -->
+            </Grid.ColumnDefinitions>
+
+            <!-- Левая панель (2/6 ширины) -->
+            <StackPanel Grid.Column="0" Background="#708090">
+                <!-- Заголовок Employee -->
+                <TextBlock Text="Админ" 
+                           Foreground="White" 
+                           FontSize="18" 
+                           FontWeight="DemiBold" 
+                           Margin="10,10,10,20" 
+                           HorizontalAlignment="Center"/>
+
+                <!-- Кнопки с иконками и текстом -->
+                <StackPanel Margin="0,-10">
+                    <!-- Animals -->
+                    <Button Margin="0,10" Click="AnimalsButton_Click" 
+                            Style="{StaticResource IconWithTextButtonStyle}" ToolTip="Manage Animals">
+                        <StackPanel>
+                            <Image Source="/Assets/Images/Icons/icons8-медвежий-след-96.png" Width="50" Height="50"/>
+                            <TextBlock Text="Животные" Style="{StaticResource ButtonTextStyle}" FontSize="10"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!-- Visitors -->
+                    <Button Margin="0,10" Click="VisitorsButton_Click"
+                            Style="{StaticResource IconWithTextButtonStyle}" ToolTip="Manage Visitors">
+                        <StackPanel>
+                            <Image Source="/Assets/Images/Icons/icons8-daily-users-64.png" Width="50" Height="50"/>
+                            <TextBlock Text="Посетители" Style="{StaticResource ButtonTextStyle}" FontSize="10"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!-- View finances -->
+                    <Button Margin="0,10" Click="ReportsButton_Click"
+                            Style="{StaticResource IconWithTextButtonStyle}" ToolTip="Generate Reports">
+                        <StackPanel>
+                            <Image Source="/Assets/Images/Icons/icons8-код-проверки-cvv-96.png" Width="50" Height="50"/>
+                            <TextBlock Text="Записать финансы" Style="{StaticResource ButtonTextStyle}" FontSize="10"/>
+                        </StackPanel>
+                    </Button>
+
+                    <!-- Upload the report -->
+                    <Button Margin="0,10" Click="ServicesButton_Click"
+                            Style="{StaticResource IconWithTextButtonStyle}" ToolTip="View Services">
+                        <StackPanel>
+                            <Image Source="/Assets/Images/Icons/icons8-striped-patterns-100.png" Width="50" Height="50"/>
+                            <TextBlock Text="Настроить сервисы" Style="{StaticResource ButtonTextStyle}" FontSize="10"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Правая часть (5/6 ширины) - можно добавить контент -->
+
+        </Grid>
+    </Grid>
+</Window>

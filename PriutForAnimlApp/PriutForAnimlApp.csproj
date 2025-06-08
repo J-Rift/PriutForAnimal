@@ -1,0 +1,91 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Images\Icons\9b6a3e81ce30e682ffa2965cb596c45a.jpg" />
+    <None Remove="Assets\Images\Icons\icons8-daily-users-64.png" />
+    <None Remove="Assets\Images\Icons\icons8-striped-patterns-100.png" />
+    <None Remove="Assets\Images\Icons\icons8-восстановить-окно-96.png" />
+    <None Remove="Assets\Images\Icons\icons8-загрузить-96.png" />
+    <None Remove="Assets\Images\Icons\icons8-знак-минус-96.png" />
+    <None Remove="Assets\Images\Icons\icons8-код-проверки-cvv-96.png" />
+    <None Remove="Assets\Images\Icons\icons8-крестик-78.png" />
+    <None Remove="Assets\Images\Icons\icons8-медвежий-след-96.png" />
+    <None Remove="Assets\Images\Icons\icons8-стрелка-50.png" />
+    <None Remove="Assets\Images\Icons\icons8-стрелка-51.png" />
+    <None Remove="Assets\Images\Icons\icons8-файл-100.png" />
+    <None Remove="Assets\Images\Icons\IMG_20250604_193645_666.ico" />
+    <None Remove="Assets\Images\Icons\spot_shadows_dark_38223_1920x1080.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="QuestPDF" Version="2025.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="App.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PriutForAnimalDbContext\PriutForAnimalDbContext.csproj" />
+    <ProjectReference Include="..\PriutForAnimal\PriutForAnimalLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\Icons\9b6a3e81ce30e682ffa2965cb596c45a.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\Icons\icons8-daily-users-64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\Icons\icons8-striped-patterns-100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\Icons\icons8-восстановить-окно-96.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\Icons\icons8-загрузить-96.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\Icons\icons8-знак-минус-96.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\Icons\icons8-код-проверки-cvv-96.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\Icons\icons8-крестик-78.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\Icons\icons8-медвежий-след-96.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\Icons\icons8-стрелка-50.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\Icons\icons8-стрелка-51.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\Icons\icons8-файл-100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\Icons\IMG_20250604_193645_666.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\Icons\spot_shadows_dark_38223_1920x1080.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
